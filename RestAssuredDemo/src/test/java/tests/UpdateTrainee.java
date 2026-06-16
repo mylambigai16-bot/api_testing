@@ -24,7 +24,7 @@ public class UpdateTrainee {
 			  .contentType(ContentType.JSON)
 			  .body(payload)
 			  .when()
-			  .put("http://localhost:3000/trainees/E9zShidy8EI");
+			  .put("http://localhost:3000/trainees/1");
 	  
 	  System.out.println("Status code: "+res.statusCode());
 	  res.prettyPrint();

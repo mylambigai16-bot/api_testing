@@ -15,8 +15,8 @@ public class CreateTrainee {
 	public void createTrainee() {
 
 		Map<String, Object> payload = new HashMap<>();
-		payload.put("Name", "Mugan");
-		payload.put("email", "mugan@gamil.com");
+		payload.put("Name", "Mugai");
+		payload.put("email", "mugai@gamil.com");
 		payload.put("Company", "Nvidia");
 
 		Response response = RestAssured.given().contentType(ContentType.JSON).body(payload).when()

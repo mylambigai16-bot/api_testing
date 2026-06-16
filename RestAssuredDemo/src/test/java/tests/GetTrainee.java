@@ -13,7 +13,7 @@ public class GetTrainee {
       Response response = RestAssured
     		  .given()
     		  .when()
-    		  .get("http://localhost:3000/trainees/KljsijJCfPE");
+    		  .get("http://localhost:3000/trainees/BuznQU3HGHE");
 	  
 	  System.out.println("Status Code:"+response.getStatusCode());
 	  System.out.println(response.asPrettyString());

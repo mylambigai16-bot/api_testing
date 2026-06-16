@@ -23,7 +23,7 @@ public class UpdateSpecific {
     		  .contentType(ContentType.JSON)
     		  .body(payload)
     		  .when()
-    		  .patch("http://localhost:3000/trainees/6naJCR3f9jQ");
+    		  .patch("http://localhost:3000/trainees/E9zShidy8EI");
 	  
 	  System.out.println("Status Code:"+response.getStatusCode());
 	  

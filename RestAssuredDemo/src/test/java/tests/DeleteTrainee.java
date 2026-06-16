@@ -13,7 +13,7 @@ public class DeleteTrainee {
       Response response = RestAssured
     		  .given()
     		  .when()
-    		  .delete("http://localhost:3000/trainees/znvAXrDd2uc");
+    		  .delete("http://localhost:3000/trainees/ft6jV0uU5Zc");
 	  
 	  System.out.println("Status Code:"+response.getStatusCode());
 	  
