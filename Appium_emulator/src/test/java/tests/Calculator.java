@@ -27,6 +27,7 @@ public class Calculator {
         options.setAutomationName("UiAutomator2");
         options.setDeviceName("Android");
         options.setUdid("00271662T000672");
+        //options.setUdid("emulator-5554");
         options.setNoReset(true);
 
         driver = new AndroidDriver(
@@ -70,16 +71,18 @@ public class Calculator {
 
         clearCalculator();
 
-        click("5");
+        click("7");
+        click("4");
         click("plus");
         click("7");
+        click("3");
         click("equals");
 
         String actual = getResult();
 
         System.out.println("Addition Result : " + actual);
 
-        Assert.assertEquals(actual, "12");
+        Assert.assertEquals(actual, "147");
     }
 
     @Test(priority = 2)
@@ -87,7 +90,8 @@ public class Calculator {
 
         clearCalculator();
 
-        click("9");
+        click("6");
+        click("0");
         click("minus");
         click("4");
         click("equals");
@@ -96,7 +100,7 @@ public class Calculator {
 
         System.out.println("Subtraction Result : " + actual);
 
-        Assert.assertEquals(actual, "5");
+        Assert.assertEquals(actual, "56");
     }
 
     @Test(priority = 3)
@@ -104,16 +108,17 @@ public class Calculator {
 
         clearCalculator();
 
-        click("6");
+        click("1");
+        click("0");
         click("multiply");
-        click("3");
+        click("5");
         click("equals");
 
         String actual = getResult();
 
         System.out.println("Multiplication Result : " + actual);
 
-        Assert.assertEquals(actual, "18");
+        Assert.assertEquals(actual, "50");
     }
 
     @AfterClass
