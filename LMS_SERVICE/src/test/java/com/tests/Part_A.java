@@ -48,12 +48,26 @@ public class Part_A {
 
 	@Test
 	public void GetAllInstitution() {
-		
-		Response res = RestAssured
-				.given()
-				.header("Authorization", "Bearer " + token)
-				.when()
-				.get(url+"/getAll/institution");
+
+		Response res = RestAssured.given().header("Authorization", "Bearer " + token).when()
+				.get(url + "/getAll/institution");
+		res.then().statusCode(200);
+		res.prettyPrint();
+	}
+
+	@Test
+	public void GetAllRoles() {
+
+		Response res = RestAssured.given().header("Authorization", "Bearer " + token).when().get(url + "/roles/getAll");
+		res.then().statusCode(200);
+		res.prettyPrint();
+	}
+
+	@Test
+	public void GetAllCourse() {
+
+		Response res = RestAssured.given().header("Authorization", "Bearer " + token).when()
+				.get(url + "/courses-structure/getAll");
 		res.then().statusCode(200);
 		res.prettyPrint();
 	}
