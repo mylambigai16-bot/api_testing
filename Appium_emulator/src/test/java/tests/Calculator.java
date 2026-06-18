@@ -18,7 +18,8 @@ public class Calculator {
 
     AndroidDriver driver;
 
-    @BeforeClass
+    @SuppressWarnings("deprecation")
+	@BeforeClass
     public void setup() throws Exception {
 
         UiAutomator2Options options = new UiAutomator2Options();
@@ -29,6 +30,9 @@ public class Calculator {
         options.setUdid("00271662T000672");
         //options.setUdid("emulator-5554");
         options.setNoReset(true);
+        
+        options.setAppPackage("com.google.android.calculator");
+        options.setAppActivity("com.android.calculator2.Calculator");
 
         driver = new AndroidDriver(
                 new URL("http://127.0.0.1:4723"),
