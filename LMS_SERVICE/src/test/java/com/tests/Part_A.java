@@ -26,7 +26,11 @@ public class Part_A {
 	@Test
 	public void HealthCheck() throws IOException {
 
-		Response res = RestAssured.given().header("Authorization", "Bearer " + token).when().get(url);
+		Response res = RestAssured
+				.given()
+				.header("Authorization", "Bearer " + token)
+				.when()
+				.get(url);
 
 		res.then().statusCode(200);
 		res.prettyPrint();
@@ -40,7 +44,13 @@ public class Part_A {
 		payload.put("email", "mai@gmail.com");
 		payload.put("password", "123");
 
-		Response res = RestAssured.given().contentType(ContentType.JSON).body(payload).when().post(url + "/user/login");
+		Response res = RestAssured
+				.given()
+				.contentType(ContentType.JSON)
+				.body(payload)
+				.when()
+				.post(url + "/user/login");
+		
 		res.then().statusCode(400);
 		res.prettyPrint();
 
@@ -49,8 +59,11 @@ public class Part_A {
 	@Test
 	public void GetAllInstitution() {
 
-		Response res = RestAssured.given().header("Authorization", "Bearer " + token).when()
+		Response res = RestAssured
+				.given().header("Authorization", "Bearer " + token)
+				.when()
 				.get(url + "/getAll/institution");
+		
 		res.then().statusCode(200);
 		res.prettyPrint();
 	}
@@ -58,7 +71,12 @@ public class Part_A {
 	@Test
 	public void GetAllRoles() {
 
-		Response res = RestAssured.given().header("Authorization", "Bearer " + token).when().get(url + "/roles/getAll");
+		Response res = RestAssured
+				.given()
+				.header("Authorization", "Bearer " + token)
+				.when()
+				.get(url + "/roles/getAll");
+		
 		res.then().statusCode(200);
 		res.prettyPrint();
 	}
@@ -66,8 +84,12 @@ public class Part_A {
 	@Test
 	public void GetAllCourse() {
 
-		Response res = RestAssured.given().header("Authorization", "Bearer " + token).when()
+		Response res = RestAssured
+				.given()
+				.header("Authorization", "Bearer " + token)
+				.when()
 				.get(url + "/courses-structure/getAll");
+		
 		res.then().statusCode(200);
 		res.prettyPrint();
 	}
